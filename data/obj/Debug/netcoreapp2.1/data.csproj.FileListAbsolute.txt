@@ -1,0 +1,12 @@
+D:\workspace\siteware\data\bin\Debug\netcoreapp2.1\data.deps.json
+D:\workspace\siteware\data\bin\Debug\netcoreapp2.1\data.dll
+D:\workspace\siteware\data\bin\Debug\netcoreapp2.1\data.pdb
+D:\workspace\siteware\data\bin\Debug\netcoreapp2.1\model.dll
+D:\workspace\siteware\data\bin\Debug\netcoreapp2.1\model.pdb
+D:\workspace\siteware\data\obj\Debug\netcoreapp2.1\data.csprojAssemblyReference.cache
+D:\workspace\siteware\data\obj\Debug\netcoreapp2.1\data.csproj.CoreCompileInputs.cache
+D:\workspace\siteware\data\obj\Debug\netcoreapp2.1\data.AssemblyInfoInputs.cache
+D:\workspace\siteware\data\obj\Debug\netcoreapp2.1\data.AssemblyInfo.cs
+D:\workspace\siteware\data\obj\Debug\netcoreapp2.1\data.csproj.CopyComplete
+D:\workspace\siteware\data\obj\Debug\netcoreapp2.1\data.dll
+D:\workspace\siteware\data\obj\Debug\netcoreapp2.1\data.pdb
