@@ -18,6 +18,7 @@ namespace model
         [Range(0,int.MaxValue)]
         public int clause { get; set; }
 
+        [EnumDataType(typeof(PromotioType))]
         public PromotioType ValueType { get; set; }
 
         public decimal totalValue(decimal price, int amount)

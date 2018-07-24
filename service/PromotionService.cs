@@ -16,12 +16,17 @@ namespace service
             _promotionRepository = promotionRepository;
         }
 
-        public IList<PromotionDTO> findAll()
+        public IList<PromotionDTO> FindAll()
         {
             return Mapper.Map<IList<PromotionDTO>>(_promotionRepository.FindAll());
         }
 
-        public PromotionDTO save(Promotion promotion)
+        public Promotion FindById(long? id)
+        {
+            return _promotionRepository.FindById(id);
+        }
+
+        public PromotionDTO Save(Promotion promotion)
         {
             _promotionRepository.Add(promotion);
             _promotionRepository.Save();

@@ -18,6 +18,11 @@ namespace data
             return _context.Set<Promotion>().ToList();
         }
 
+        public Promotion FindById(long? id)
+        {
+            return _context.Set<Promotion>().Find(id);
+        }
+
         public Promotion Add(Promotion product)
         {
             _context.Set<Promotion>().Add(product);
