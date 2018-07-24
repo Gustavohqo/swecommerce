@@ -14,6 +14,6 @@ namespace model
         [Range(0.001, int.MaxValue)]
         public decimal price { get; set; }
 
-        public virtual int PromotionID { get; set; }
+        public long? PromotionID { get; set; }
     }
 }

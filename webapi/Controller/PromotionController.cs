@@ -3,6 +3,7 @@ using model;
 using Microsoft.AspNetCore.Mvc;
 using service;
 using service.DTO;
+using webapi.Validator;
 
 namespace webapi.Controllers
 {
@@ -19,13 +20,14 @@ namespace webapi.Controllers
         [HttpGet]
         public IList<PromotionDTO> getAll()
         {
-            return _promotionService.findAll();
+            return _promotionService.FindAll();
         }
         
         [HttpPost]
+        [ValidateModel]
         public PromotionDTO create([FromBody] Promotion promotion)
         {
-            return _promotionService.save(promotion);
+            return _promotionService.Save(promotion);
         }
     }
 }
