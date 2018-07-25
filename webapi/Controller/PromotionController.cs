@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using model;
+﻿using model;
 using Microsoft.AspNetCore.Mvc;
 using service;
-using service.DTO;
 using webapi.Validator;
 
 namespace webapi.Controllers
@@ -18,16 +16,16 @@ namespace webapi.Controllers
         }
         
         [HttpGet]
-        public IList<PromotionDTO> getAll()
+        public IActionResult getAll()
         {
-            return _promotionService.FindAll();
+            return Ok(_promotionService.FindAll());
         }
         
         [HttpPost]
         [ValidateModel]
-        public PromotionDTO create([FromBody] Promotion promotion)
+        public IActionResult create([FromBody] Promotion promotionModel)
         {
-            return _promotionService.Save(promotion);
+            return Ok(_promotionService.Save(promotionModel));
         }
     }
 }

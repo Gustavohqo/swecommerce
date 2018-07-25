@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
 
 namespace model
 {
@@ -41,17 +39,13 @@ namespace model
         
         private decimal totalValuePercentage(decimal price, int amount)
         {
-            var valuePerItem = (1 - (value / 100)) * price;
-            
             if (clause == 0)
-            {
-                return amount * valuePerItem;
-            }
+                return (amount * price) * (1 - (value / 100));
             
-            var discount = amount / clause;
             var realValue = amount % clause;
+            var toBeDiscounted = amount - realValue;
             
-            return discount*valuePerItem + realValue*price;
+            return ((value / 100)) * (price*toBeDiscounted) + realValue*price;
         }
     }
 }

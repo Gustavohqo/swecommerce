@@ -39,8 +39,10 @@ namespace webapi
             Mapper.AssertConfigurationIsValid();
             
             services.AddTransient<ProductService, ProductService>();
-            services.AddTransient<ProductRepository, ProductRepository>();
             services.AddTransient<PromotionService, PromotionService>();
+            services.AddTransient<CartService, CartService>();
+            
+            services.AddTransient<ProductRepository, ProductRepository>();
             services.AddTransient<PromotionRepository, PromotionRepository>();
         }
 
@@ -54,7 +56,6 @@ namespace webapi
 
             app.UseCors(opt => { opt.AllowAnyOrigin(); });
             app.UseMvc();
-            app.Run(async (context) => { await context.Response.WriteAsync("Hello World!"); });
         }
     }
 }
