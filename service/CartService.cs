@@ -31,6 +31,14 @@ namespace service
             return _cart;
         }
 
+        public Cart CheckOut()
+        {
+            _cart.products = new Dictionary<long, CartItem>();
+            clearValues();
+            
+            return _cart;
+        }
+
         /**
          * Updates an Item on the cart. 
          */

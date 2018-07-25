@@ -35,5 +35,11 @@ namespace webapi.Controllers
                 return BadRequest(ModelState);
             }
         }
+
+        [HttpPost]
+        public IActionResult CheckOutCart()
+        {
+            return Ok(_cartService.CheckOut());
+        }
     }
 }
