@@ -9,8 +9,6 @@ namespace data.Mapping
         public void Configure(EntityTypeBuilder<Promotion> builder)
         {
             builder.HasKey(c => c.ID);
-
-            builder.HasAlternateKey(c => c.name);
         }
     }
 }
