@@ -34,10 +34,18 @@ namespace webapi.Controllers
          *
          * Gets a product by its id.
          */
-        [HttpGet("{productId}")]
-        public IActionResult GetById(long id)
+        [HttpGet("{productID}")]
+        public IActionResult GetById(long productID)
         {
-            return Ok(_productService.FindById(id));
+            try
+            {
+                return Ok(_productService.FindById(productID));    
+            }
+            catch (System.Exception)
+            {
+                return NotFound("Product Not found");
+            }
+            
         }
         
         /*

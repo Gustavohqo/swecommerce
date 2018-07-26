@@ -1,0 +1,38 @@
+<div class="container row cartView">
+  <div class="col-9 border">
+    <div class="row col-12 pb-4">
+        <div class="col text-center font-weight-bold pb-4">Produto</div>
+        <div class="col text-center font-weight-bold pb-4"> Quantidade</div>
+        <div class="col text-center font-weight-bold pb-4"> Preço</div>
+        <div class="col text-center font-weight-bold pb-4">Promoção</div>
+    </div>
+    <div *ngFor="let product of products" class="row col-12 pb-3">
+      <div class="col text-center">{{product.productName}}</div>
+      <div class="col row text-center">
+        <input class="col-8" type="number" #oldAmount [(ngModel)]="product.amount"
+         min="0" (change)="product.change = true">
+         <div class="col-4 updateitemButton" data-toggle="tooltip" title="Atualizar Item"
+          *ngIf="product.change" (click)="updateItem(product, oldAmount)">
+           <i class="fas fa-sync-alt"></i>
+          </div>
+      </div>
+      <div class="col text-center"> {{product.price | currency: "R$ "}}</div>
+      <div class="col text-center">{{product.activePromotionName}}</div>
+    </div>
+  </div>
+  <div class="col-2 border mx-4">
+    <div>
+      <p>Valor Total:</p>
+      <p class="text-right">{{cart.grossValue | currency: "R$ "}}</p>
+    </div>
+    <div>
+      <p>Valor Promoções:</p>
+      <p class="text-right">- {{cart.totalDiscount | currency: "R$ "}}</p>
+    </div>
+    <div>------------------------</div>
+    <div class="row" >
+      <span class="col-3 font-weight-bold">Total:</span>
+      <p class="col-9 text-right">{{cart.netValue | currency: "R$ "}}</p>
+    </div> 
+  </div>
+</div>

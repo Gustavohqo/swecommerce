@@ -1,0 +1,6 @@
+<div class="container row shopView no-gutters">
+  <app-product class="col-4" *ngFor="let product of products"
+  [product]="product" (click)="selectItem(product)"></app-product>  
+  
+  <div *ngIf="products.length === 0"><h2>Não há produtos cadastrados!</h2></div>
+</div>

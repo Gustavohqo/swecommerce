@@ -4,7 +4,13 @@
     {
         public long ProductID { get; set; }
 
+        public string productName { get; set; }
+
         public int Amount { get; set; }
+
+        public decimal price { get; set; }
+
+        public string activePromotionName { get; set; }
 
 
         protected bool Equals(CartItem other)

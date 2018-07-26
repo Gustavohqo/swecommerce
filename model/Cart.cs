@@ -11,7 +11,5 @@ namespace model
         public decimal netValue { get; set; }
         
         public decimal totalDiscount { get; set; }
-
-        
     }
 }

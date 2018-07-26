@@ -1,0 +1,12 @@
+.cartView{
+    margin: 0 auto;
+}
+
+.updateitemButton {
+    color: rgb(53, 53, 54);
+}
+
+.updateitemButton:hover {
+    color: rgb(0, 38, 255);
+    cursor: pointer;
+}

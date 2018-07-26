@@ -51,15 +51,32 @@ namespace service
                 var actual = new CartItem();
                 _cart.products.TryGetValue(cartItem.ProductID, out actual);
                 
-                ValidateAmount(cartItem.Amount);
-                actual.Amount = cartItem.Amount;
+                ValidateAmountUpdate(actual.Amount, cartItem.Amount);
+                var newAmount = actual.Amount + cartItem.Amount;
+                if(newAmount > 0)
+                {
+                    actual.Amount = newAmount;
+                } 
+                else
+                {
+                    _cart.products.Remove(cartItem.ProductID);
+                }
             }
             else
             {
+                var product = _productService.FindById(cartItem.ProductID);
+                if(product.PromotionID != null)
+                {
+                    var promotion = _promotionService.FindById(product.PromotionID);
+                    cartItem.activePromotionName = promotion.name;
+                }
+
+                cartItem.price = product.price;
+                cartItem.productName = product.name;
+
                 _cart.products.Add(cartItem.ProductID, cartItem);
             }
 
-            RemoveItems();
             CalculateValues();
             return _cart;
         }
@@ -67,7 +84,7 @@ namespace service
         /**
          * Remove from cart all items that has Amount equal to 0. 
          */
-        private void RemoveItems()
+        public void RemoveItems()
         {
             var products = _cart.products.Values;
 
@@ -98,6 +115,10 @@ namespace service
                 {
                     var promotion = _promotionService.FindById(product.PromotionID);
                     _cart.netValue += promotion.totalValue(product.price, item.Amount);
+                }
+                else 
+                {
+                    _cart.netValue += product.price * item.Amount;
                 }
 
                 _cart.totalDiscount = _cart.grossValue - _cart.netValue;
@@ -132,9 +153,9 @@ namespace service
          * Validates if a given amount is positive.
          * In case it is negative a ValidationException is thrown.
          */
-        private void ValidateAmount(int newAmount)
+        private void ValidateAmountUpdate(int oldAmount, int newAmount)
         {
-            if (newAmount < 0)
+            if (newAmount + oldAmount < 0)
             {
                 throw new ValidationException("Item with id {carItem.ProductID} has invalid amount")
                 {
