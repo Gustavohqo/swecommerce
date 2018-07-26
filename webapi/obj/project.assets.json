@@ -11977,11 +11977,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workspace\\siteware\\webapi\\webapi.csproj",
+      "projectUniqueName": "d:\\workspace\\siteware\\webapi\\webapi.csproj",
       "projectName": "webapi",
-      "projectPath": "D:\\workspace\\siteware\\webapi\\webapi.csproj",
+      "projectPath": "d:\\workspace\\siteware\\webapi\\webapi.csproj",
       "packagesPath": "C:\\Users\\gustavooliveira\\.nuget\\packages\\",
-      "outputPath": "D:\\workspace\\siteware\\webapi\\obj\\",
+      "outputPath": "d:\\workspace\\siteware\\webapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11998,8 +11998,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\workspace\\siteware\\service\\service.csproj": {
-              "projectPath": "D:\\workspace\\siteware\\service\\service.csproj"
+            "d:\\workspace\\siteware\\service\\service.csproj": {
+              "projectPath": "d:\\workspace\\siteware\\service\\service.csproj"
             }
           }
         }
@@ -12032,7 +12032,6 @@
             "version": "[2.1.1, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true

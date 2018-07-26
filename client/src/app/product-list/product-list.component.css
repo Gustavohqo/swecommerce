@@ -1,0 +1,30 @@
+.componenteListagem {
+    max-width: 300px
+}
+
+.listagemProdutos {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 25em !important; 
+    padding: 0
+}
+
+.listagemTitulo {
+    line-height: 2em
+}
+
+.addProductButtom{
+    font-size: 18px; 
+    margin-top: 12px;
+    color: rgb(42, 153, 42);
+}
+
+.addProductButtom:hover {
+    color: rgb(19, 116, 19);
+    cursor: pointer;
+}
+
+#acoes {
+    max-width: 320px;
+}

@@ -27,6 +27,8 @@ namespace webapi
             services.AddDbContext<Context>(opt => opt.UseInMemoryDatabase()
                 .UseLazyLoadingProxies());
 
+            services.AddCors();
+            
             services.AddMvc();
 
             Mapper.Initialize(cfg =>
@@ -54,8 +56,9 @@ namespace webapi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(opt => { opt.AllowAnyOrigin(); });
+            app.UseCors(opt => { opt.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin(); });
             app.UseMvc();
+            app.Run(async (context) => { await context.Response.WriteAsync("Hello World!"); });
         }
     }
 }

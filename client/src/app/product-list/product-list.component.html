@@ -1,0 +1,21 @@
+<div class="container border componenteListagem">
+  <div id="acoes" class="row border-bottom listagemTitulo">
+      <h3 class="col-10 font-weight-bold">
+        Produtos
+      </h3>
+      <div class="col-1">
+          <i class="fas fa-plus addProductButtom" (click)="createProduct()"></i>  
+      </div>
+  </div>
+  <div class="listagemProdutos">
+      <app-product *ngFor="let product of products"
+      [product]="product" (click)="selectItem(product)">
+    </app-product>  
+    <div *ngIf="products.length === 0">
+        <h5>Não há produtos cadastrados!</h5>
+      </div>
+  </div>
+
+  
+  {{selectedProduct.name}}
+</div>

@@ -4301,11 +4301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workspace\\siteware\\service\\service.csproj",
+      "projectUniqueName": "d:\\workspace\\siteware\\service\\service.csproj",
       "projectName": "service",
-      "projectPath": "D:\\workspace\\siteware\\service\\service.csproj",
+      "projectPath": "d:\\workspace\\siteware\\service\\service.csproj",
       "packagesPath": "C:\\Users\\gustavooliveira\\.nuget\\packages\\",
-      "outputPath": "D:\\workspace\\siteware\\service\\obj\\",
+      "outputPath": "d:\\workspace\\siteware\\service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4322,11 +4322,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\workspace\\siteware\\data\\data.csproj": {
-              "projectPath": "D:\\workspace\\siteware\\data\\data.csproj"
+            "d:\\workspace\\siteware\\data\\data.csproj": {
+              "projectPath": "d:\\workspace\\siteware\\data\\data.csproj"
             },
-            "D:\\workspace\\siteware\\model\\model.csproj": {
-              "projectPath": "D:\\workspace\\siteware\\model\\model.csproj"
+            "d:\\workspace\\siteware\\model\\model.csproj": {
+              "projectPath": "d:\\workspace\\siteware\\model\\model.csproj"
             }
           }
         }

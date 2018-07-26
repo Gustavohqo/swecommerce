@@ -1,0 +1,50 @@
+<form class="formUpdateProduct border form-row">
+  <h2 class="col-12 text-center border-bottom">{{actual_state.title}}</h2>
+  <div class="alert alert-danger col-12" role="alert" *ngIf="validationErro.isInvalid">
+      {{validationErro.message}}
+  </div>
+
+  <!-- product-->
+  <div class="form-group col-12 mb-3">
+    <label for="productName">Produto*</label>
+    <input type="text" class="form-control" id="productName" name="productName"
+     placeholder="Nome do Produto" required [(ngModel)]="product.name">
+  </div>
+
+
+    <!-- price-->
+    <div class="form-group col-6">
+      <label for="productPrice">Preço*</label>
+      <div class="input-group">
+          <div class="input-group-prepend">
+              <div class="input-group-text">R$</div>
+            </div>
+            <input class="form-control" id="productPrice" currencyMask [(ngModel)]="product.price"
+             name="value" min="0" [options]="{ prefix: ' ', thousands: ',', decimal: '.' }" required/>
+      </div>
+    </div>
+
+    <!-- promotion-->
+    <div class="form-group col-6">
+        <label for="selectPromotion">Promoção</label>
+        <select class="form-control" id="selectPromotion" name="selecPromotion" [(ngModel)]="product.promotionID">
+          <option value=""></option>
+          <option *ngFor="let promotion of promotions" [value]="promotion.id">
+            {{promotion.name}}
+          </option>
+        </select>
+    </div>
+
+    <!-- button -->
+    <div class="form-group col">
+      <div class="row justify-content-between">
+          <button type="button" class="btn btn-outline-info col-3 ml-3" (click)="cancel()">Cancelar</button>
+          <button *ngIf="actual_state.buttonDelete" type="button" class="btn btn-danger col-3" 
+          (click)="deleteProduct()">
+            <i class="fas fa-trash-alt"></i> Deletar
+          </button>
+          <button *ngIf="!actual_state.buttonSave" type="submit" class="btn btn-outline-success col-3 mr-3" (click)="saveProduct()">Editar</button>
+          <button *ngIf="actual_state.buttonSave" type="submit" class="btn btn-outline-success col-3 mr-3" (click)="saveProduct()">Registrar</button>
+      </div>
+    </div>
+</form>

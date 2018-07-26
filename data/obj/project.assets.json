@@ -4196,11 +4196,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workspace\\siteware\\data\\data.csproj",
+      "projectUniqueName": "d:\\workspace\\siteware\\data\\data.csproj",
       "projectName": "data",
-      "projectPath": "D:\\workspace\\siteware\\data\\data.csproj",
+      "projectPath": "d:\\workspace\\siteware\\data\\data.csproj",
       "packagesPath": "C:\\Users\\gustavooliveira\\.nuget\\packages\\",
-      "outputPath": "D:\\workspace\\siteware\\data\\obj\\",
+      "outputPath": "d:\\workspace\\siteware\\data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4217,8 +4217,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\workspace\\siteware\\model\\model.csproj": {
-              "projectPath": "D:\\workspace\\siteware\\model\\model.csproj"
+            "d:\\workspace\\siteware\\model\\model.csproj": {
+              "projectPath": "d:\\workspace\\siteware\\model\\model.csproj"
             }
           }
         }

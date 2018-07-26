@@ -24,7 +24,14 @@ namespace service
 
         public Product FindById(long id)
         {
-            return _productRepository.FindById(id);
+            Product product = _productRepository.FindById(id);
+            if(product !=null) 
+                return product;
+
+            throw new ValidationException("There is no Product with given id")
+                {
+                    Source = "productID"
+                };
         }
 
         public Product Update(Product newProduct, long oldId)
